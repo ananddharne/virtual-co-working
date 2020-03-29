@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -7,123 +7,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   background-color: rgb(34, 34, 34);
-}
+  display: flex;
+  flex-direction: column;
+} */
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
-.box {
+/* .tables {
   display: flex
-}
+} */
 
-.box-row {
-  display: flex;
-  flex-direction: row;
-  width: 100px;
-  height: 100px;
-  margin-top: 56px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 16px;
-  background-color: black;
-  color: rgb(170, 170, 170);
-  transition: box-shadow 0.2s ease-in-out, transform 0.35s ease-in-out;
-}
+/* .table {
+  border-bottom: 100px solid #333;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    height: 0;
+    width: 100px;
+    background-color:white;
+} */
 
-
-html {
-  height: 100%;
-}
-
-.circle {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  background-color:#FF4081;
-  color: white;
-  display: inline-block;
-  position: absolute;
-  transition: box-shadow 0.2s ease-in-out, transform 0.35s ease-in-out; 
-}
-
-.circle.big:hover {
-  box-shadow: 0 11px 11px 0 rgba(0, 0, 0,.16);
-  transform: translateY(-5px);
-  color: black
-}
-
-.circle.stream1:hover {
-  box-shadow: 0 11px 11px 0 rgba(0, 0, 0,.16);
-  transform: translateY(-5px);
-  color:black
-}
-.circle.stream2:hover {
-  box-shadow: 0 11px 11px 0 rgba(0, 0, 0,.16);
-  transform: translateY(-5px);
-  color:black
-}
-.circle.stream3:hover {
-  box-shadow: 0 11px 11px 0 rgba(0, 0, 0,.16);
-  transform: translateY(-5px);
-  color:black
-}
-.circle.stream4:hover {
-  box-shadow: 0 11px 11px 0 rgba(0, 0, 0,.16);
-  transform: translateY(-5px);
-  color:black
-}
-.circle.stream5:hover {
-  box-shadow: 0 11px 11px 0 rgba(0, 0, 0,.16);
-  transform: translateY(-5px);
-  color:black
-}
-.circle.stream6:hover {
-  box-shadow: 0 11px 11px 0 rgba(0, 0, 0,.16);
-  transform: translateY(-5px);
-  color:black
-}
-
-.circle.big {
-  width: 150px;
-  height: 150px;
-  background-color: black;
-  margin: 100px;
-}
-
-.stream1 {
-  left: -25px;
-  top: -25px;
-}
-
-.stream2 {
-  top: -60px;
-  left: 50px;
-}
-
-.stream3 {
-  right: -25px;
-  top: -25px;
-}
-
-
-.stream4 {
-  left: -25px;
-  bottom: -25px;
-}
-
-.stream5 {
-  bottom: -60px;
-  left: 50px;
-}
-
-.stream6 {
-  right: -25px;
-  bottom: -25px;
-}
-
-#root {
+/* #root {
   height: 100%;
   min-height: 100%;
-}
+} */

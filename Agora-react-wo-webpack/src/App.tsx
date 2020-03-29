@@ -25,6 +25,9 @@ import { ThemeProvider } from "@material-ui/styles";
 import $ from "jquery";
 import StreamPlayer from "agora-stream-player";
 import { SnackbarProvider, useSnackbar } from "notistack";
+import PersonIcon from '@material-ui/icons/Person';
+import CropLandscapeIcon from '@material-ui/icons/CropLandscape';
+import Table from "./components/Table"
 
 import { useCamera, useMicrophone, useMediaStream } from "./hooks";
 import AgoraRTC from "./utils/AgoraEnhancer";
@@ -51,6 +54,10 @@ const useStyles = makeStyles(theme => ({
   },
   advanceSettings: {
     marginTop: 16
+  },
+  table: {
+    width: 75,
+    height: 75
   }
 }));
 
@@ -266,164 +273,7 @@ function App() {
         </Toolbar>
       </AppBar>
       <Toolbar className={classes.divider} />
-      <Container>
-        <Grid container spacing={3}>
-          {/* form */}
-          <Grid item xs={12} md={4}>
-            <Card >
-              <CardContent>
-                <form noValidate autoComplete="off">
-                  <TextField
-                    required
-                    value={state.appId}
-                    onChange={update("setAppId")}
-                    id="appId"
-                    label="App ID"
-                    fullWidth
-                    margin="normal"
-                  />
-                  <TextField
-                    required
-                    value={state.channel}
-                    onChange={update("setChannel")}
-                    id="channel"
-                    label="Channel"
-                    fullWidth
-                    margin="normal"
-                  />
-
-                  <TextField
-                    value={state.token}
-                    onChange={update("setToken")}
-                    id="token"
-                    label="Token"
-                    fullWidth
-                    margin="normal"
-                  />
-                </form>
-              </CardContent>
-              <CardActions className={classes.buttonContainer}>
-                <JoinLeaveBtn />
-                <PubUnpubBtn />
-              </CardActions>
-            </Card>
-
-            {/* advanced settings */}
-            <ThemeProvider
-              theme={createMuiTheme({
-                palette: {
-                  type: "dark"
-                }
-              })}
-            >
-              <ExpansionPanel className={classes.advanceSettings}>
-                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-                  <Typography>Advanced Settings</Typography>
-                </ExpansionPanelSummary>
-                <ExpansionPanelDetails>
-                  <form noValidate autoComplete="off">
-                    <TextField
-                      value={state.uid}
-                      id="uid"
-                      onChange={update("setUid")}
-                      label="UID"
-                      fullWidth
-                      margin="normal"
-                    />
-                    <TextField
-                      id="cameraId"
-                      value={state.cameraId}
-                      onChange={update("setCamera")}
-                      select
-                      label="Camera"
-                      helperText="Please select your camera"
-                      fullWidth
-                      margin="normal"
-                    >
-                      {cameraList.map(item => (
-                        <MenuItem key={item.deviceId} value={item.deviceId}>
-                          {item.label}
-                        </MenuItem>
-                      ))}
-                    </TextField>
-                    <TextField
-                      id="microphoneId"
-                      value={state.microphoneId}
-                      onChange={update("setMicrophone")}
-                      select
-                      label="Microphone"
-                      helperText="Please select your microphone"
-                      fullWidth
-                      margin="normal"
-                    >
-                      {microphoneList.map(item => (
-                        <MenuItem key={item.deviceId} value={item.deviceId}>
-                          {item.label}
-                        </MenuItem>
-                      ))}
-                    </TextField>
-
-                    <FormControl fullWidth component="fieldset" margin="normal">
-                      <FormLabel>Mode</FormLabel>
-                      <RadioGroup
-                        row
-                        value={state.mode}
-                        onChange={update("setMode")}
-                      >
-                        <FormControlLabel
-                          value="live"
-                          control={<Radio color="primary" />}
-                          label="live"
-                        />
-                        <FormControlLabel
-                          value="rtc"
-                          control={<Radio color="primary" />}
-                          label="rtc"
-                        />
-                      </RadioGroup>
-                    </FormControl>
-
-                    <FormControl fullWidth component="fieldset" margin="normal">
-                      <FormLabel>Codec</FormLabel>
-                      <RadioGroup
-                        row
-                        value={state.codec}
-                        onChange={update("setCodec")}
-                      >
-                        <FormControlLabel
-                          value="vp8"
-                          control={<Radio color="primary" />}
-                          label="vp8"
-                        />
-                        <FormControlLabel
-                          value="h264"
-                          control={<Radio color="primary" />}
-                          label="h264"
-                        />
-                      </RadioGroup>
-                    </FormControl>
-                  </form>
-                </ExpansionPanelDetails>
-              </ExpansionPanel>
-            </ThemeProvider>
-          </Grid>
-
-          {/* display area */}
-          <Grid item xs={12} md={8}>
-            {localStream && (
-              <StreamPlayer stream={localStream} fit="contain" label="local" />
-            )}
-            {remoteStreamList.map((stream: any) => (
-              <StreamPlayer
-                key={stream.getId()}
-                stream={stream}
-                fit="cover"
-                label={stream.getId()}
-              />
-            ))}
-          </Grid>
-        </Grid>
-      </Container>
+     
       {/* <div className="box">
         {  
             tables.map((t:any) => 
@@ -439,23 +289,37 @@ function App() {
             
             }
         </div>  */}
-        <div className="box">
-        {  
+        {/* <div className="tables"> */}
+        {/* {  
             tables.map((t:any) => 
             <ul>
             <li className='circle big'>
             <Grid item xs={12} md={8}>
               <li>Host</li>
             {remoteStreamList.map((stream: any, i: any) => (
-              <li className={"circle stream" + i}>{i + stream.getId()}</li>
+              <li  className={"circle stream" + i}> <PersonIcon/>{i + stream.getId()}</li>
             ))}
           </Grid>
             </li>
             <hr/>
             </ul>
         )
+            } */}
+              {  
+            tables.map((t:any) => 
+            // <ul>
+            <div className='table'>
+             <PersonIcon/><CropLandscapeIcon style={{ width: 200, height: 200 }}> </CropLandscapeIcon>
+              {/* <li>Host</li> */}
+            {remoteStreamList.map((stream: any, i: any) => (
+              <li className={"circle stream" + i}> <PersonIcon/>{i + stream.getId()}</li>
+            ))}
+          </div>
+              )
             }
-        </div> 
+          {<Table></Table>}
+            {}
+        {/* </div>  */}
     </React.Fragment>
   );
 }

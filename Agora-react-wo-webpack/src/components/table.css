@@ -1,0 +1,135 @@
+html, body{
+    margin: 0;
+    display: flex;
+    font-family: Arial;
+    flex-direction: column;
+    height: 100%;
+    background-color: #2e2e30;
+}
+.container{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   background-color:  #565656;
+}
+.content{
+    background-color: #2e2e30;
+    border-radius: 50px;
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+.garb-a-seat{
+    background-color: black;
+    color: #e5cc57;
+    border-radius: 10px;
+    padding: 10px;
+    width: max-content;
+    position: relative;
+    top: 30px;
+    left: 360px;
+}
+.center-stack{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+}
+.table{
+    background-color: #565656;
+    border-radius: 20px;
+    width: 200px;
+    height: 160px;
+    top: 170px;
+    z-index: 1;
+}
+.chair{
+    /*background-color: #e5cc57;*/
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 200px;
+}
+.circle{
+    background-color: #adabac;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    /*top: 200px;*/
+    position: absolute;
+}
+.back{
+    background-color: #8b8b8b;
+    width: 20px;
+    height: 100px;
+    /*top: 200px;*/
+    position: absolute;
+}
+.chair-left{
+    right: 250px;
+}
+.chair-right{
+    left: 250px;
+}
+.chair-top{
+    top: 250px;
+}
+.chair-bottom{
+    top: 250px;
+}
+.back-left{
+    left: 80px;
+}
+
+.back-right{
+    right: 80px;
+}
+
+.back-left{
+    left: 80px;
+}
+
+.back-down{
+    bottom: 80px;
+}
+
+.profile{
+    background-color: #8d8d8d;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border-radius: 10px;
+    z-index: 2;
+
+}
+.profile-up{
+    top: 100px;
+}
+.profile-down{
+    top: 300px;
+}
+
+.profile-left{
+    left: 200px;
+    top: 200px;
+}
+
+.profile-right{
+    right: 200px;
+    top: 200px;
+}
+/* .img{
+    position: absolute;
+    /* background-image: url("1.png");
+    background-position: center;
+    background-size: cover;
+    background-color: #e5cc57;
+    height: 90px;
+    width: 90px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+} */
