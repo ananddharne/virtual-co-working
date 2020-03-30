@@ -6,19 +6,15 @@ html, body{
     height: 100%;
     background-color: #2e2e30;
 }
-.container{
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   background-color:  #565656;
-}
+
 .content{
     background-color: #2e2e30;
     border-radius: 50px;
     width: 500px;
-    height: 500px;
+    height: 600px;
     position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .garb-a-seat{
     background-color: black;

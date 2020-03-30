@@ -32,6 +32,8 @@ import Table from "./components/Table"
 import { useCamera, useMicrophone, useMediaStream } from "./hooks";
 import AgoraRTC from "./utils/AgoraEnhancer";
 import { async } from "q";
+import { TransitionGroup } from "react-transition-group";
+import { ModalProvider } from "react-modal-hook";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -310,16 +312,16 @@ function App() {
             // <ul>
             <div className='table'>
              <PersonIcon/><CropLandscapeIcon style={{ width: 200, height: 200 }}> </CropLandscapeIcon>
-              {/* <li>Host</li> */}
             {remoteStreamList.map((stream: any, i: any) => (
               <li className={"circle stream" + i}> <PersonIcon/>{i + stream.getId()}</li>
             ))}
           </div>
               )
             }
+<       div className="table-container">
           {<Table></Table>}
-            {}
-        {/* </div>  */}
+          {<Table></Table>}
+        </div>
     </React.Fragment>
   );
 }
@@ -331,7 +333,10 @@ export default function AppWithNotification() {
       autoHideDuration={2500}
       maxSnack={5}
     >
+    <ModalProvider rootComponent={TransitionGroup}>
+
       <App />
+      </ModalProvider>
     </SnackbarProvider>
   );
 }

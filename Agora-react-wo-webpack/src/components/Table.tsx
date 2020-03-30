@@ -3,7 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import "./table.css"
 import Modal from "./Modals/connectionModal"
-import useModal from './Modals/useModal';
+// import useModal from './Modals/useModal';
+import { useModal } from "react-modal-hook";
 // import Modali from 'modali';
 
 const useStyles = makeStyles(theme => ({
@@ -39,24 +40,33 @@ const useStyles = makeStyles(theme => ({
 function Table() {
     const classes = useStyles();
 
-    const {isShowing, toggle} = useModal();
+    const [showCreateModal, hideCreateModal] = useModal(
+        ({ in: open, onExited }) => (
+            <div>
+         <h1>3gdfgfgf</h1>
+         <h1>3gdfgfgf</h1>
+         <h1>3gdfgfgf</h1>
+         <h1>3gdfgfgf</h1>
+         </div>
+        )
+      );
+      const [modalShown, toggleModal] = useState(false)
 
-       
     return (
 <div className="container">
     <div className="content">
         <Button
         className={classes.buttonItem}
         color={true ? "secondary" : "primary"}
-        onClick={isShowing ?  () => toggle: () => {}}
+        onClick={modalShown? hideCreateModal :showCreateModal}
         variant="contained"
        >
         {true ? "Grab a seat" : "Spectate"}
       </Button>
-      <Modal
+      {/* <Modal
         isShowing={isShowing}
         hide={toggle}
-      />
+      /> */}
         {/* <Modali.Modal {...completeExample}>
     Hi, I'm a Modali
   </Modali.Modal> */}
